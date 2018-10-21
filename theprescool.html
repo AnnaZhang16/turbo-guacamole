@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>the preschoooooool</title>
+    <style>
+        .input {
+            position: relative;
+            font-size: 1.5em;
+            background: linear-gradient(40deg, #10abff, #1beabd);
+            padding: 3px;
+            display: inline-block;
+            border-radius: 9999em;
+        }
+        
+        .input *:not(span) {
+            position: relative;
+            display: inherit;
+            border-radius: inherit;
+            margin: 0;
+            border: none;
+            outline: none;
+            padding: 0 .325em;
+            z-index: 1;
+        }
+        
+        html {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            line-height: 1.5;
+            height: 100%;
+            font-size: 3em;
+        }
+        
+        body {
+            background: #065f5f;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        input {
+            font-family: inherit;
+            line-height: inherit;
+            color: #2e3750;
+            min-width: 12em;
+        }
+        
+        body #container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+        
+        body #container #circle-loader-wrap {
+            overflow: hidden;
+            position: relative;
+            margin-top: -10px;
+            width: 200px;
+            height: 200px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1) inset;
+            background-color: #25909c;
+            border-radius: 200px;
+            -ms-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        
+        body #container #circle-loader-wrap:after {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background-color: #014040;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        body #container #circle-loader-wrap div {
+            overflow: hidden;
+            position: absolute;
+            width: 50%;
+            height: 100%;
+        }
+        
+        body #container #circle-loader-wrap .loader {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 1000px;
+            background-color: #32c8d9;
+        }
+        
+        body #container #circle-loader-wrap .left-wrap {
+            left: 0;
+        }
+        
+        body #container #circle-loader-wrap .left-wrap .loader {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            transform-origin: 0 50% 0;
+            -webkit-transform-origin: 0 50% 0;
+            animation: loading-left 10s;
+            -webkit-animation: loading-left 10s;
+        }
+        
+        body #container #circle-loader-wrap .right-wrap {
+            left: 50%;
+        }
+        
+        body #container #circle-loader-wrap .right-wrap .loader {
+            left: -100%;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            transform-origin: 100% 50% 0;
+            -webkit-transform-origin: 100% 50% 0;
+            animation: loading-right 10s;
+            -webkit-animation: loading-right 10s;
+        }
+        
+        @keyframes loading-left {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(180deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            75% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(180deg);
+            }
+        }
+        
+        @-webkit-keyframes loading-left {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            25% {
+                -webkit-transform: rotate(180deg);
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+            75% {
+                -webkit-transform: rotate(180deg);
+            }
+            100% {
+                -webkit-transform: rotate(180deg);
+            }
+        }
+        
+        @keyframes loading-right {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            75% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(180deg);
+            }
+        }
+        
+        @-webkit-keyframes loading-right {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            25% {
+                -webkit-transform: rotate(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+            75% {
+                -webkit-transform: rotate(180deg);
+            }
+            100% {
+                -webkit-transform: rotate(180deg);
+            }
+        }
+    </style>
+    <script>
+        function start() {
+            var x = document.getElementById('test');
+            x.style.animationPlayState = "running";
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="circle-loader-wrap">
+            <div class="left-wrap">
+                <div class="loader"></div>
+            </div>
+            <div class="right-wrap">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        <form action="http://foo.com" method="get">
+            <span class="input">
+                <input type="text" style="width: 600px" placeholder="Type your story here...">   
+                <input type="submit" style="position: absolute; left: -9999px"/> 
+        </span>
+        </form>
+    </p>
+
+</body>
+
+</html>
